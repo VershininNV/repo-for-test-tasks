@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.accordion {
+  width: 80%;
+  .mat-expansion-panel-header-description {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

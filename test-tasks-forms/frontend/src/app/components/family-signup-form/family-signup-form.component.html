@@ -1,0 +1,30 @@
+<div class="header">
+  <h1>Family Signup Form</h1>
+</div>
+<div>
+  <div class="button-row">
+    <button mat-raised-button>Сохранить</button>
+    <button mat-raised-button color="primary">Загрузить</button>
+    <button mat-raised-button (click)="addFamily()">
+      Создать карточку семьи
+    </button>
+  </div>
+
+  <div *ngFor="let familyForm of families.controls; let i = index">
+    <app-parent-form
+      [form]="familyForm"
+      [formId]="i"
+      (deleteRequest)="deleteFamily($event)"
+      (onFormInit)="onFormControlInit('', $event, i)"
+    ></app-parent-form>
+  </div>
+
+  <!-- <div *ngFor="let familyForm of families.controls; let i = index">
+    <app-parents-form
+      [form]="familyForm"
+      [formId]="i"
+      (deleteRequest)="deleteFamily($event)"
+      (onFormInit)="onFormControlInit('', $event, i)"
+    ></app-parents-form>
+  </div> -->
+</div>
